@@ -1,0 +1,143 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Adventure and Experience The Travel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/css/search.css'%}">
+    </head>
+    <body>
+        <header>
+                <a id="logo"><img src="{% static '/image/logo.svg'%}" alt="logo"></a>
+                <div class="container">
+                    <a class="item" href="{% url 'home' %}">Home</a>
+                    <a class="item" href="#travel">Travel</a>
+                    <a class="item" href="#about">Pages</a>
+                    <a class="item" href="#about">Blog</a>
+                    <a class="item" href="#about">Contact Us</a>
+                </div>
+                <div class="container1">
+                    <a><img src="{% static '/image/Symbol.svg'%}" alt="symbol"></a>
+                    <div class="container2">
+                        <a class="search" href="{% url 'search' %}">Search</a>
+                    </div>
+                </div>
+        </header>
+        <section class="sec1">
+            <div class="div1">
+                <img src="{% static '/image/searchbg.png'%}">
+            </div>
+        </section>
+        <section class="sec2">
+            <div class="div2">
+                <form method="get" action="filter">
+                {% comment %} <a >{{ form.as_p }}</a> {% endcomment %}
+
+                {% csrf_token %}
+                    <div class="form-group">
+                        <h4>Destination :</h4>
+                        <div class="dropdown-container">
+                            {{ form.destination_type }}
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Select your date : </h4>
+                        <input type="text" id="input-box" >
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <h4>Typologies :</h4>
+                        <div class="checkbox-group">
+                            {% for checkbox in form.typologies%}
+                                <label>{{ checkbox.tag }} {{ checkbox.choice_label }}</label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Max Price :</h4>
+                        <p id="two">$ 5000</p>
+                        <div class="container13"><img src="{% static "/image/price.svg" %}" alt="price"></div>
+                        <input type="checkbox"><label id="one"> See only promotions </label>
+                    </div>
+                    <div class="form-group">
+                    <h4>Duration :</h4>
+                        <div class="checkbox-group">
+                            {% for checkbox in form.duration %}
+                                <label>{{ checkbox.tag }} {{ checkbox.choice_label }}</label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h4>Difficulty  :</h4>
+                        <div class="checkbox-group">
+                            {% for checkbox in form.difficulty %}
+                                <label>{{ checkbox.tag }} {{ checkbox.choice_label }}</label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                   
+                    <button class="search" type="submit">Filter</button>
+                </form>
+            </div>
+            <div>
+                <div class="div3">
+                    {% for place in places %}
+                    <div class="div4">
+                        <img src="{{ place.profile_image.url }}">
+                        <div >
+                            <div class="div6">
+                                <span id="span1"><img src="{% static '/image/time.svg'%}"> </span>
+                                <span> {{place.duration }}</span>
+                                <span id="span2">
+                                    <img src="{% static '/image/link.svg'%}">
+                                    <img src="{% static '/image/mail.svg'%}">
+                                </span>
+                            </div>
+                            <div class="div7">
+                                <h1>{{ place.name }}</h1>  
+                                <span id="span4"><img src="{% static '/image/location01.svg'%}">&nbsp{{ place.country }} </span><br>              
+                                <hr>
+                                <a id="id1">{{ place.short_description }}</a>
+                               <hr>
+                                <div class="container23">
+                                    <a href="{% url 'details' pk=place.pk %}" class="search9">Details</a>
+                                    <div><div id="one">from </div><div id="id2">${{ place.price }} </div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-content">
+                <div class="f1">
+                    Travel beyond your<br>
+                    imagination, with our <br>
+                    Travel Agency!
+                </div>
+                <div class="f2">
+                    <h4>Address</h4>
+                    <p>1080 Brickell Ave</p>
+                    <p>Miami - Florida</p>
+                    <p>U.S. of America</p>
+                    <div class="div5">
+                        <a><img src="{% static '/image/facebook.svg'%}" alt="citywalk"></a>
+                        <a><img src="{% static '/image/twitter.svg'%}" alt="citywalk"></a>
+                        <a><img src="{% static '/image/youtube.svg'%}" alt="citywalk"></a>
+                    </div>
+                </div>
+                <div class="f3">
+                    <h3>Contact</h3>
+                    <div class="container4">
+                        <a class="search4">info@travel.com</a>
+                    </div>
+                    <h2>+ 01 483 593 284</h2>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

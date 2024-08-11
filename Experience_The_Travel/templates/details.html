@@ -1,0 +1,283 @@
+{%load static%}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Adventure and Experience The Travel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/css/details.css'%}">
+    </head>
+
+    <body>
+        <header>
+            <a id="logo"><img src="{% static '/image/logo.svg'%}" alt="logo"></a>
+            <div class="container">
+                <a class="item" href="{% url 'home' %}">Home</a>
+                <a class="item" href="#travel">Travel</a>
+                <a class="item" href="#about">Pages</a>
+                <a class="item" href="#about">Blog</a>
+                <a class="item" href="#about">Contact Us</a>
+            </div>
+            <div class="container1">
+                <a><img src="{% static '/image/Symbol.svg'%}" alt="symbol"></a>
+                <div class="container2">
+                    <a class="search" href="{% url 'search' %}">Search</a>
+                </div>
+            </div>
+    </header>
+
+    <section class="sec1">
+        <div class="sec1-1">
+            <a><img src="{% static '/image/dbg2.svg'%}" alt="dbg2"></a>
+            <a><img src="{% static '/image/dbg3.svg'%}" alt="dbg3"></a>
+            <a><img src="{% static '/image/dbg1.svg'%}" alt="dbg1"></a>
+        </div>
+        <div class="sec1-2">
+            <div>
+                <a id="h1">{{ place.name }}</a>
+                <div class="container7">
+                    <a><img src="{% static '/image/location2.svg'%}" alt="arrow"></a>
+                    <span>{{ place.country }}</span>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="container8">
+                    <a><img src="{% static '/image/duration.svg'%}" alt="arrow"></a>
+                    <div>
+                        <div id="two">Duration </div>
+                        <div id="id3"> {{ place.duration }} </div>
+                    </div>
+                </div>
+                <div class="container8">
+                    <a><img src="{% static '/image/duration.svg'%}" alt="arrow"></a>
+                    <div>
+                        <div id="two">Difficulty </div>
+                        <div id="id3"> {{ place.difficulty }} </div>
+                    </div>
+                </div>
+                <div class="container8">
+                    <a><img src="{% static '/image/age.svg'%}" alt="age"></a>
+                    <div>
+                        <div id="two">Age </div>
+                        <div id="id3">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec2">
+        <div class="sec2-1">
+            <h1>{{ place.description_heading }}</h1>
+            <p id="one">{{ place.description }}</p>
+            <hr class="hr1">
+             <h1>Included / Excluded</h1>
+            <p id="one">To help you plan your trip, we have put together a list of what's included and what's not included in your<br>
+                tour package. This will give you a clear understanding of what to expect and help you make any<br>
+                necessary arrangements before your journey begins.
+            </p>
+            <div class="container5">
+                <div >
+                    <div class="container6">
+                        <a><img src="{% static '/image/tick1.svg'%}" alt="tick1"></a>
+                        <span id="one">Train tickets and Bus transportation</span>
+                    </div>
+                    <div class="container6">
+                        <a><img src="{% static '/image/tick1.svg'%}" alt="tick1"></a>
+                        <span id="one">Breakfast, lunch, and dinner.</span>
+                    </div>
+                    <div class="container6">
+                        <a><img src="{% static '/image/tick1.svg'%}" alt="tick1"></a>
+                        <span id="one">Accommodation at hotel</span>
+                    </div>
+                    <div class="container6">
+                        <a><img src="{% static '/image/tick1.svg'%}" alt="arrow"></a>
+                        <span id="one">Train tickets and Bus transportation</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="container6">
+                        <a><img src="{% static '/image/tick1.svg'%}" alt="tick1"></a>
+                        <span id="one">Professional tour guide</span>
+                    </div>
+                    <div class="container6">
+                        <a><img src="{% static '/image/tick1.svg'%}" alt="tick1"></a>
+                        <span id="one">Transfers between destinations</span>
+                    </div>
+                    <div class="container6">
+                        <a><img src="{% static '/image/cross.svg'%}" alt="cross"></a>
+                        <span id="one">Entrance fees to museums</span>
+                    </div>
+                    <div class="container6">
+                        <a><img src="{% static '/image/cross.svg'%}" alt="cross"></a>
+                        <span id="one">Custom itinerary</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="hr1">
+            <h1>Tour Map</h1>
+            <p id="one">This comprehensive map is designed to guide you through an exciting journey filled with remarkable<br>
+                destinations and captivating experiences.</p>
+            <div id="map"><img src="{% static '/image/map.svg'%}" alt="map"></div>
+            <hr class="hr1">
+            <h1>Itinerary</h1>
+            <p id="one">We have carefully planned out each day to give you the best possible experience. From exploring historic <br>
+                landmarks to tasting delicious local cuisine, each day is packed with adventure and excitement. Join us <br>
+                as we take you on a journey through some of the most fascinating destinations in the world.
+            </p>
+            
+            <div class="days">
+                <a id="day"><span>DAY 1 </span>- Arrival and Orientation</a>
+                <a id="arrow"><img src="{% static '/image/arrow.svg'%}" alt="arrow"></a>
+            </div>
+            <hr>
+            <div class="days">
+                <a id="day"><span>DAY 2 </span>- City Tour</a>
+                <a id="arrow"><img src="{% static '/image/arrow.svg'%}" alt="arrow"></a>
+            </div>
+            <hr>
+            <div class="days">
+                <a id="day"><span>DAY 3 </span>- Cooking Class</a>
+                <a id="arrow"><img src="{% static '/image/arrow.svg'%}" alt="arrow"></a>
+            </div>
+            <hr>
+            <div class="days">
+                <a id="day"><span>DAY 4 </span>- Nature Hike</a>
+                <a id="arrow"><img src="{% static '/image/arrow.svg'%}" alt="arrow"></a>
+            </div>
+            <hr>
+            <div class="days">
+                <a id="day"><span>DAY 5 </span>- Free Day</a>
+                <a id="arrow"><img src="{% static '/image/arrow.svg'%}" alt="arrow"></a>
+            </div>
+            <hr>
+           <h1>Gallery</h1>
+           <p id="one">Each image tells a unique story, inviting us into a world of emotion, beauty, and complexity. Get ready to <br>
+            be moved, inspired, and challenged as we journey through this captivating collection of images.
+           </p>
+           <div >
+                <div class="container12">
+                    <a ><img src="{% static '/image/dbg2.svg'%}" alt="arrow"></a>
+                    <a ><img src="{% static '/image/dbg3.svg'%}" alt="arrow"></a>
+                    <a ><img src="{% static '/image/dbg1.svg'%}" alt="arrow"></a>
+                </div>
+                <div class="container12">
+                    <a ><img src="{% static '/image/g1.svg'%}" alt="arrow"></a>
+                    <a ><img src="{% static '/image/g2.svg'%}" alt="arrow"></a>
+                    <a ><img src="{% static '/image/g3.svg'%}" alt="arrow"></a>
+                </div>
+           </div>
+
+        </div>
+        <div class="sec2-2">
+            <div class="container9">
+                <div class="container10">
+                    <div>
+                        <div id="two">Price </div>
+                        <h4 id="id4">From</h4>
+                    </div>
+                    <h1 id="id5">$<span>{{ place.price}} </span></h1>
+                </div>
+                <hr>
+                <div class="container11">
+                    <p id="p2">Booking Form</p>
+                    <p id="three"></p>
+                    <p>Enquiry Form</p>
+                </div>
+                <hr>
+                <div>
+                    <h4 id="id4">Date</h4>
+                    <div id="two">03-13-2024</div>
+                </div>
+                <hr>
+                <div class="container10">
+                    <div>
+                        <h4 id="id4">Adults</h4>
+                        <div id="two">Over 18 ( $ {{ place.price}}  )</div>
+                    </div>
+                    <h1 id="id5">-&nbsp<span>1</span>&nbsp+</h1>
+                </div>
+                <hr>
+                <div class="container10">
+                    <div>
+                        <h4 id="id4">Children</h4>
+                        <div id="two">Under 18 ( ${{ place.price}} )</div>
+                    </div>
+                    <h1 id="id5">-&nbsp<span>0</span>&nbsp+</h1>
+                </div>
+                <hr>
+                <div class="container10">
+                    <div>
+                        <h4 id="id4">Extra Services</h4>
+                        <div id="two">Add extra services on your reservation</div>
+                        <div id="two"><input type="checkbox">&nbsp<label>Health Insurance ( $ 220 )</label></div>
+                        <div id="two"><input type="checkbox">&nbsp<label>Medical Insurance ( $ 45 )</label></div>
+                    </div>
+                </div>
+                <div class="container13">
+                    <a class="search1" href='search'>BOOK NOW FOR $ 490</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec3">
+        <p id="p1">Check All</p>
+        <h1 >Packages</h1>
+        <div class="div20">
+            {% for place in places %}
+            <div class="div21">
+                <img src="{{ place.profile_image.url }}">
+                <div >
+                    <div class="div22">
+                        <span id="span3"><img src="{% static '/image/time.svg'%}"> </span>
+                        {{ place.duration }}
+                        <span id="span2">
+                            <img src="{% static '/image/link.svg'%}">
+                            <img src="{% static '/image/mail.svg'%}">
+                        </span>
+                    </div>
+                    <div class="div23">
+                        <h1>{{ place.name }}</h1>  
+                        <span id="span4"><img src="{% static '/image/location01.svg'%}">&nbsp{{ place.country }} </span><br>              
+                        <hr>
+                        <a id="id1">{{ place.short_description }}</a>
+                       <hr>
+                        <div class="container23">
+                            <a href="{% url 'details' pk=place.pk  %}" class="search9">Details</a>
+                            <div><div id="two">from </div><div id="id2">${{ place.price }} </div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h1 class="f1">
+                Travel beyond your<br>
+                imagination, with our <br>
+                Travel Agency!
+            </h1>
+            <div class="f2">
+                <h4>Address</h4>
+                <p>1080 Brickell Ave</p>
+                <p>Miami - Florida</p>
+                <p>U.S. of America</p>
+                <div class="div5">
+                    <a><img src="{% static '/image/facebook.svg'%}" alt="citywalk"></a>
+                    <a><img src="{% static '/image/twitter.svg'%}" alt="citywalk"></a>
+                    <a><img src="{% static '/image/youtube.svg'%}" alt="citywalk"></a>
+                </div>
+            </div>
+            <div class="f3">
+                <h3>Contact</h3>
+                <div class="container4">
+                    <a class="search4">info@travel.com</a>
+                </div>
+                <h2>+ 01 483 593 284</h2>
+            </div>
+        </div>
+    </footer>
+    </body>
+</html>

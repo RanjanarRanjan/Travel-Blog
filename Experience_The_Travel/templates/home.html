@@ -1,0 +1,347 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Adventure and Experience The Travel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/css/home.css'%}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <a class="item" href="{% url 'home' %}">Home</a>
+                <a class="item" href="#travel">Travel</a>
+                <a class="item" href="#about">Pages</a>
+                <a class="item" href="#about">Blog</a>
+                <a class="item" href="#about">Contact Us</a>
+            </div>
+            <div class="container1">
+                <a><img src="{% static '/image/Symbol.svg'%}" alt="symbol"></a>
+                <div class="container2">
+                    <a class="search" href="{% url 'search' %}">Search</a>
+                </div>
+            </div>
+        </header>
+        <section class="sec1">
+            <div class="div1">
+                <h6 id="one">LOVE TRAVEL THEME</h6>
+                <h1 id="two">Adventure & <br>Experience <br>The Travel !</h1>
+                <div class="div2">
+                    <a class="img1"><img src="{% static '/image/search.svg'%}" alt="chats"><span id="three">Search<br>Insert&nbsp;keyword</span></a>
+                    <a class="img1"><img src="{% static '/image/location.svg'%}" alt="chats">Destinations<br>All&nbsp;Destinations</a>
+                    <a class="img1"><img src="{% static '/image/location.svg'%}" alt="chats">Destinations<br>All&nbsp;Destinations</a>
+                   
+                    <div class="container3">
+                        <a class="search2" href="{% url 'search' %}">Search</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec2">
+            <p id="p1">Dream Vacation Destination</p>
+            <h1 id="four">
+                Plan the Trip of a Lifetime<br>
+                with Ease
+            </h1>
+            <p id="p2">
+                Whether you're looking for a romantic getaway, a family-friendly adventure, or a <br>
+                solo journey to explore the world, a travel agency can provide you with a <br>
+                custom-tailored itinerary that exceeds your expectations.
+            </p>
+            <div class="container2">
+                <a class="search">more info</a>
+            </div>
+            <div class="div3">
+                <a ><img src="{% static '/image/citywalk.svg'%}" alt="citywalk"></a>
+                <a ><img src="{% static '/image/electricBike.svg'%}" alt="electricBike"></a>
+                <a ><img src="{% static '/image/skyscrapers.svg'%}" alt="skyscrapers"></a>
+            </div>
+            <div>
+            <div class="div20">
+                {% for place in places %}
+                <div class="div21">
+                    <img src="{{ place.profile_image.url }}">
+                    <div >
+                        <div class="div22">
+                            <span id="span3"><img src="{% static '/image/time.svg'%}"> </span>
+                            <span>{{ place.duration }}</span>
+                            <span id="span2">
+                                <img src="{% static '/image/link.svg'%}">
+                                <img src="{% static '/image/mail.svg'%}">
+                            </span>
+                        </div>
+                        <div class="div23">
+                            <h1>{{ place.name }}</h1>  
+                            <span id="span4"><img src="{% static '/image/location01.svg'%}">&nbsp{{ place.country }} </span><br>              
+                            <hr>
+                            <a id="id1">{{ place.short_description }}</a>
+                           <hr>
+                            <div class="container23">
+                                <a href="{% url 'details' pk=place.pk  %}" class="search9">Details</a>
+                                <div><div id="one">from </div><div id="id2">${{ place.price }} </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+        </section>
+        <section class="sec3">
+            <p id="p1">Choose your Trip</p>
+            <h1>Start your Vacation Now</h1>
+            <p id="p2">
+                Looking for your dream vacation destination but don't know where to start? With the help <br>of<br>
+                experienced and knowledgeable travel agents, you can plan the trip of a lifetime with ease
+            </p>
+            <div class="div4">
+                <a class="img1"><img src="{% static '/image/search1.svg'%}" alt="chats"><span id="three">Search<br>Insert&nbsp;keyword</span></a>
+                <a class="img1"><img src="{% static '/image/location1.svg'%}" alt="chats">Destinations<br>All&nbsp;Destinations</a>
+                <a class="img1"><img src="{% static '/image/menu.svg'%}" alt="chats">Typologies<br>All&nbsp;Typologies</a>
+               
+                <div class="container3">
+                    <a class="search3" href="{% url 'search' %}">Search</a>
+                </div>
+            </div>
+        </section>
+        <section class="sec4">
+            <div id="img2"><img src="{% static '/image/nextadventure.svg'%}" alt="nextadventure"></div>
+            <h1>Travel Destinations <br>
+                Available Worldwide</h1>
+            <p id="p2">
+                We have compiled a list of top destinations across the globe, scoured the world<br>
+                for the most alluring and fascinating places to visit. From the beautiful beaches <br>
+                of the Caribbean to the majestic mountains of Europe and the vibrant cities of <br>
+                Asia, our destination list has something for everyone.
+            </p>
+            <div class="div3">
+                <a><img src="{% static '/image/pic1.svg'%}" alt="citywalk"></a>
+                <a><img src="{% static '/image/pic2.svg'%}" alt="electricBike"></a>
+                <a><img src="{% static '/image/pic3.svg'%}" alt="skyscrapers"></a>
+                <a><img src="{% static '/image/pic4.svg'%}" alt="skyscrapers"></a>
+            </div>
+        </section>
+        <section class="sec5">
+            <div id="img3"><img src="{% static '/image/sec5.svg'%}" alt="skyscrapers"></div>
+            <div class="div6">
+                <p id="p3">Adventure Travel</p>
+                <h1 id="six">Embrace the Thrill of <br>
+                    the Unknown</h1>
+                <p id="p4">Are you tired of the typical tourist destinations and looking to step out of <br>
+                    your comfort zone? Adventure travel may be the perfect solution for you!   <br>
+                    Here are four reasons why you should book an adventure travel experience :</p>
+                <div class="div7">
+                    <p id="p5"><a id="img4"><img src="{%static '/image/tick.svg'%}"></a>Connect with nature</p>
+                    <p id="p5"><a id="img4"><img src="{%static '/image/tick.svg'%}"></a>Experience other cultures</p>
+                    <p id="p5"><a id="img4"><img src="{%static '/image/tick.svg'%}"></a>Create unforgettable memories</p>
+                </div>
+                <div class="container2">
+                    <a class="search">All Services</a>
+                </div>
+            </div>
+        </section>
+        <section class="sec6">
+            <h1 id="seven">Travel Itineraries</h1>
+            <a><img src="{%static '/image/video.svg'%}"></a>
+            <div class="div8">
+                <a><img src="{%static '/image/blissful.svg'%}"></a>
+                <a><img src="{%static '/image/club.svg'%}"></a>
+                <a><img src="{%static '/image/biking.svg'%}"></a>
+                <a><img src="{%static '/image/travelling.svg'%}"></a>
+                <a><img src="{%static '/image/travelworld.svg'%}"></a>
+            </div>
+        </section>
+        <section class="sec7">
+            <h1 id="six">Unforgettable Travel  <br>
+                Experiences</h1>
+            <p id="p4">Our customer's feedback is essential in building a great reputation and <br>
+                maintaining excellent service. By listening to our customer's needs, we can <br>
+                improve our offerings and provide an exceptional travel experience.</p>
+            <div class="div9">
+                <div class="div10">
+                    <p>My husband and I have been using this  <br>
+                        travel agency for years and they have  <br>
+                        never disappointed us.</p>
+                    <div id="p6"><a id="img5"><img src="{%static '/image/profile1.svg'%}"></a><p>Jennifer and Mark<br><span id="span1">San Francisco</p></span></div>
+                </div>
+                <div class="div10">
+                    <p>This travel agency made my dream trip to  <br>
+                        Europe a reality. They worked with me   <br>
+                        every step of the way to plan the itinerary.</p>
+                    <div id="p6">
+                        <a id="img5"><img src="{%static '/image/profile2.svg'%}"></a><P>Dylan and Emily<br><span id="span1">Miami</span></p></div>
+                
+                </div>
+            </div>
+        </section>
+        <section class="sec8">
+            <p id="p1">Clear Price</p>
+            <h1>Affordable Travel Packages</h1>
+            <p id="p2">
+                We believe that everyone deserves to experience their dream vacation without breaking the bank. <br>
+                That's why we offer a price section on our website that features a range of affordable travel
+            </p>
+            <div class="div11">
+                <div class="div12">
+                    <h4 id="eleven">Half Board</h4>
+                    <p><span id="ten">$ 50</span>/Day</p>
+                    <p id="eight">
+                        Transfers from Airport <br>
+                        Minimum 3 Star Hotel <br>
+                        Alcoholic beverages <br>
+                        Incl. Museum Tickets <br>
+                        Meals in Restaurants
+                    </p>
+                    <div class="container5">
+                        <a class="search5">VIEW TRIPS</a>
+                    </div>
+                </div>
+                <div class="div13">
+                    <h4 id="eleven">All Inclusive</h4>
+                    <p><span id="ten">$ 32</span>/Day</p>
+                    <p id="nine">
+                        Meals in Restaurants <br>
+                        Alcoholic beverages <br>
+                        Minimum 3 Star Hotel <br>
+                        Transfers from Airport <br>
+                        Incl. Museum Tickets
+                    </p>
+                    <div class="container6">
+                        <a class="search6">VIEW ALL</a>
+                    </div>
+                </div>
+                <div class="div14">
+                    <h4 id="eleven">Excursions Included</h4>
+                    <p><span id="ten">$ 68</span>/Day</p>
+                    <p id="nine">
+                    Minimum 3 Star Hotel <br>
+                    Meals in Restaurants <br>
+                    Incl. Museum Tickets <br>
+                    Meals in Restaurants <br>
+                    Alcoholic beverages <br>
+                    </p>
+                    <div class="container5">
+                        <a class="search5">BUTTON</a>
+                    </div>
+                </div>
+            </div>
+            <p id="nine">* All trips include medical insurance</p>
+        </section>
+        <section class="sec9">
+            <div>
+                <p id="p1">Wandering Souls</p>
+                <h1 >Discover Your Next  <br>
+                    Adventure</h1>
+                <p id="twelve">
+                    Whether you're planning a romantic honeymoon or a family vacation, our <br>
+                    price section has got you covered. So, start browsing today and find the <br>
+                    perfect vacation package at a price that won't leave you feeling guilty.
+                </p> 
+                <p id="p7">Organized Group Tour</p>
+                <div class="line"></div>
+                <p id="p7">Single Customized Trip</p>
+                <div class="line1"></div>
+                <div class="container2">
+                    <a class="search">more info</a>
+                </div>
+            </div>
+            <div id="img3"><img src="{% static '/image/sec9.svg'%}" alt="skyscrapers"></div>
+        </section >
+        <section class="sec10">
+            <div class="div17">
+                <p id="p1">Roaming Tales</p>
+                <h1>Travel Blog</h1>
+                <p id="p2">
+                    We share our experiences, tips and travel stories to inspire and guide our readers in their own <br>
+                    wanderlust adventures. From hidden gems to popular destinations, we showcase the beauty and  <br>
+                    diversity of the world, and promote responsible and sustainable travel.
+                </p>
+            </div>
+            <div class="div15">
+                <div class="div16">
+                    <div id="img6"><img src="{% static '/image/div15.svg'%}" alt="skyscrapers"></div>
+                    <div class="container7">
+                        <a class="search8">April 7, 2023</a>
+                    </div>
+                    <p id="p8">Plan the Perfect Vacation</p>
+                    <p id="p9">Planning a vacation can be overwhelming, but this post offers a step-by-step <br>
+                        guide to help readers create a comprehensive travel itinerary. From choosing a  <br>
+                        destination to booking accommodations and activities, readers will learn how  <br>
+                        to plan a stress-free and enjoyable trip.</p>
+                        <div class="container2">
+                            <a class="search">read more</a>
+                        </div>
+                </div>
+                <div class="div19">
+                    <div class="div18">
+                        <div id="img7"><img src="{% static '/image/div15-1.svg'%}" alt="skyscrapers"></div>
+                        <div>
+                            <a class="search8">April 7, 2023</a>
+                            <h5>Discover the Hidden Gems</h5>
+                            <p>Benefits of traveling alone, from the freedom to  <br>
+                                discover new places with new friends.</p>
+                        </div>
+                    </div>
+                    <div class="div18">
+                        <div id="img7"><img src="{% static '/image/div15-2.svg'%}" alt="skyscrapers"></div>
+                        <div>
+                            <a class="search8">April 7, 2023</a>
+                            <h5>Must-See Landmarks</h5>
+                            <p>Iconic landmarks that make Europe one of the  <br>
+                                world's most popular travel destinations.</p>
+                        </div>
+                    </div>
+                    <div class="div18">
+                        <div id="img7"><img src="{% static '/image/div15-3.svg'%}" alt="skyscrapers"></div>
+                        <div>
+                            <a class="search8">April 7, 2023</a>
+                            <h5>Traveling on a Budget</h5>
+                            <p>Practical advice for travelers who want to see the <br>
+                                world without breaking the bank.</p>
+                        </div>
+                    </div>
+                    <div class="div18">
+                        <div id="img7"><img src="{% static '/image/div15-4.svg'%}" alt="skyscrapers"></div>
+                        <div>
+                            <a class="search8">April 7, 2023</a>
+                            <h5>Explore the Wonders</h5>
+                            <p>Must-see destinations and experiences, including  <br>
+                                wildlife and cultural experiences.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+           
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="f1">
+                    Travel beyond your<br>
+                    imagination, with our <br>
+                    Travel Agency!
+                </div>
+                <div class="f2">
+                    <h4>Address</h4>
+                    <p>1080 Brickell Ave</p>
+                    <p>Miami - Florida</p>
+                    <p>U.S. of America</p>
+                    <div class="div5">
+                        <a><img src="{% static '/image/facebook.svg'%}" alt="citywalk"></a>
+                        <a><img src="{% static '/image/twitter.svg'%}" alt="citywalk"></a>
+                        <a><img src="{% static '/image/youtube.svg'%}" alt="citywalk"></a>
+                    </div>
+                </div>
+                <div class="f3">
+                    <h3>Contact</h3>
+                    <div class="container4">
+                        <a class="search4">info@travel.com</a>
+                    </div>
+                    <h2>+ 01 483 593 284</h2>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
